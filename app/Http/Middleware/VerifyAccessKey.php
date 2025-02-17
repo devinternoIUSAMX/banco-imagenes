@@ -17,10 +17,11 @@ class VerifyAccessKey
     public function handle(Request $request, Closure $next)
     {
         // Obtenemos el api-key que el usuario envia
-        $key = $request->headers->get('api_key');
+        $key = $request->headers->get('api-key');
+
         // Si coincide con el valor almacenado en la aplicacion
         // la aplicacion se sigue ejecutando
-        if (isset($key) == env('API_KEY')) {
+        if (isset($key) == config('app.key')) {
             return $next($request)
             ->header('Access-Control-Allow-Origin', '*')
             ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
