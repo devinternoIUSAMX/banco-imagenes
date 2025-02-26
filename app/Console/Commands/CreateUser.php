@@ -46,7 +46,7 @@ class CreateUser extends Command
             ])->validate();
 
             User::create([
-                'name' => $inputs['names'],
+                'name' => $inputs['name'],
                 'email' => $inputs['email'],
                 'password' => Hash::make($inputs['password']),
             ]);
