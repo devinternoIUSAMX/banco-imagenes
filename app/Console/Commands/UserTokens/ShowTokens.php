@@ -20,7 +20,7 @@ class ShowTokens extends Command
      *
      * @var string
      */
-    protected $description = 'Generates a user token';
+    protected $description = 'List the user tokens';
 
     /**
      * Execute the console command.
